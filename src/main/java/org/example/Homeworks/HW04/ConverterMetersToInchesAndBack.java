@@ -1,11 +1,11 @@
 package org.example.Homeworks.HW04;
 
 public class ConverterMetersToInchesAndBack {
-    static float MetersToInches(float M)
+    static float metersToInches(float M)
     {
         return (float) (M * 39.37);
     }
-    static float InchestoMeters(float I)
+    static float inchestoMeters(float I)
     {
         return (float)(I / 39.37);
     }
@@ -18,8 +18,8 @@ public class ConverterMetersToInchesAndBack {
         float I = 20;
 
         System .out.println ( "Length in inches ( I ) = "
-                + MetersToInches(M));
+                + metersToInches(M));
         System .out.println ( "Length in meters ( M ) = "
-                + InchestoMeters(I));
+                + inchestoMeters(I));
     }
 }
