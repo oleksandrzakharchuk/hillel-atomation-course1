@@ -1,11 +1,11 @@
 package org.example.Homeworks.HW04;
 
 public class ComverterpoundsToKilogramsAndBack {
-    static double PoundsToKilomgrams(double P)
+    static double poundsToKilomgrams(double P)
     {
         return P / 2.205;
     }
-    static double KilomgramstoPoubds (double K)
+    static double kilomgramstoPoubds (double K)
     {
         return K * 2.205;
     }
@@ -17,9 +17,9 @@ public class ComverterpoundsToKilogramsAndBack {
 
         System .out.println ( "\n" +
                 "weight in kilograms ( K ) = "
-                + PoundsToKilomgrams(P));
+                + poundsToKilomgrams(P));
         System .out.println ( "\n" +
                 "weight in pounds ( P ) = "
-                + KilomgramstoPoubds(K));
+                + kilomgramstoPoubds(K));
     }
 }
