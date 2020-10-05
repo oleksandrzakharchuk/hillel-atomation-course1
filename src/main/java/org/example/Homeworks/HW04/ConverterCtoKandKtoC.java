@@ -2,11 +2,11 @@ package org.example.Homeworks.HW04;
 
 public class ConverterCtoKandKtoC {
 
-    static float CelsiustoKelvin(float C)
+    static float celsiustoKelvin(float C)
     {
         return (float)(C + 273.15);
     }
-    static float KelvintoCelsius(float K)
+    static float kelvintoCelsius(float K)
     {
         return (float)(K - 273.15);
     }
@@ -20,8 +20,8 @@ public class ConverterCtoKandKtoC {
 
 
         System .out.println ( "Temperature in Kelvin ( K ) = "
-                + CelsiustoKelvin(C));
+                + celsiustoKelvin(C));
         System .out.println ( "Temperature in Celsius ( C ) = "
-                + KelvintoCelsius(K));
+                + kelvintoCelsius(K));
     }
 }
