@@ -1,11 +1,11 @@
 package org.example.Homeworks.HW04;
 
 public class ConverterNilesToKilometresAndBack {
-    static double MilesToKilometres(double M)
+    static double milesToKilometres(double M)
     {
         return M * 1.609;
     }
-    static double KilometrestoMiles(double K)
+    static double kilometrestoMiles(double K)
     {
         return K / 1.609;
     }
@@ -17,8 +17,8 @@ public class ConverterNilesToKilometresAndBack {
 
         System .out.println ( "\n" +
                 "Distance in kilometers ( K ) = "
-                + MilesToKilometres(M));
+                + milesToKilometres(M));
         System .out.println ( "Mileage ( M ) = "
-                + KilometrestoMiles(K));
+                + kilometrestoMiles(K));
     }
 }
