@@ -1,4 +1,4 @@
-package org.example.homeworks.HW07;
+package org.example.Homeworks.HW07;
 
 public class FractionNumbers {//Дробь
     private int numerator;  //Числитель
