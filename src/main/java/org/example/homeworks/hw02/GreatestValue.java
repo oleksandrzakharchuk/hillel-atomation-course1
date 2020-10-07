@@ -1,4 +1,4 @@
-package org.example.homework.hw02;
+package org.example.homeworks.hw02;
 import java.util.Random;
 public class GreatestValue {
     public static void main(String[] args) {

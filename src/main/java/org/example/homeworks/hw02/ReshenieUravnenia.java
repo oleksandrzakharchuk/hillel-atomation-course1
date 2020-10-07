@@ -1,4 +1,4 @@
-package org.example.homework.hw02;
+package org.example.homeworks.hw02;
 import java.util.Random;
 public class ReshenieUravnenia {
     public static void main(String[] args) {
@@ -21,3 +21,5 @@ public class ReshenieUravnenia {
 
     }
 }
+
+

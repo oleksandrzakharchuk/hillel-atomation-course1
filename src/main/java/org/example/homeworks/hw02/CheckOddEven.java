@@ -1,5 +1,7 @@
-package org.example.homework.hw02;
+package org.example.homeworks.hw02;
+
 import java.util.Random;
+
 public class CheckOddEven {
     public static void main(String[] args) {
 
@@ -19,3 +21,4 @@ public class CheckOddEven {
 // которая печатает “Odd Number” если переменная “number”
 // типа int нечетная. Или “Even Number” если переменная четная.
 // Программа всегда должна перед выходом печатать “BYE”
+

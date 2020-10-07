@@ -1,5 +1,7 @@
-package org.example.homework.hw02;
+package org.example.homeworks.hw02;
 import java.util.Random;
+import java.util.Random;
+
 public class CheckPassFail {
     public static void main(String[] args) {
 

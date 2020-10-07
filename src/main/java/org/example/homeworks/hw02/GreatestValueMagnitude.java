@@ -1,4 +1,4 @@
-package org.example.homework.hw02;
+package org.example.homeworks.hw02;
 
 public class GreatestValueMagnitude {
     public static void main(String[] args) {
@@ -19,4 +19,3 @@ public class GreatestValueMagnitude {
 // если одно число = 3, а второе число = -9,
 // программа должна выдать,
 // что число -9 имеет большую величину.
-
