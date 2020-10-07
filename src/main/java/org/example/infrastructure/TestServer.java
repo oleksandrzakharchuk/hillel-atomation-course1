@@ -2,7 +2,8 @@ package org.example.infrastructure;
 
 public class TestServer {
     public static String GetUrl() {
-        switch (ConfigurationMamager.getInstanse() != null ? ConfigurationMamager.getInstanse().getTestEnv() : null){
+
+        switch(ConfigurationMamager.getInstanse().getTestEnv();){
             case "dev":
                 return "http://dev.mysite.com";
             case "staging":
