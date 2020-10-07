@@ -15,7 +15,6 @@ public class ConfigurationMamager {
     }
 
     public String getTestBrowser() {
-
         return getEnvironmentVariableOrDefault("testBrowser", "chrome");
 
     }
