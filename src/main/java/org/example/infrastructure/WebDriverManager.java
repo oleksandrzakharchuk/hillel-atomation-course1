@@ -1,20 +1,18 @@
 package org.example.infrastructure;
 
-import java.util.concurrent.Callable;
-
 public class WebDriverManager {
 
     public String createBrowser() {
         //public WebDriver createBrowser(){
 
-        switch (ConfigurationMamager.getInstanse().getTestBrowser()) {
+        switch (ConfigurationManager.getInstance().getTestBrowser()) {
 
             case "chrome":
                 return "Google Chrome";
             //return new ChromeDriver();
 
             case "firefox":
-                return "MazillaFirefox";
+                return "MozillaFirefox";
 
             case "ie":
                 return "Internet Explorer";
