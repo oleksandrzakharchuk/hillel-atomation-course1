@@ -9,7 +9,7 @@ public class TestApp1 {
         String brawser= wdm.createBrowser();
 
         logger.log("Open website");
-        System.out.println("-->"+brawser+"opening"+TestServer.GetUrl());
+        System.out.println("-->"+brawser+"opening "+TestServer.GetUrl());
 
         logger.log("Precondition1");
         System.out.println("-->Step1");
