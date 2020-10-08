@@ -1,6 +1,6 @@
 package org.example.homeworks.hw09;
 
-public class ClientTest1 extends TestBase {
+public class ClientTest1 extends TestBase1 {
 
     @Override
     protected void beforeTest() {
