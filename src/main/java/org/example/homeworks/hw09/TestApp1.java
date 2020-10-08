@@ -4,7 +4,7 @@ import org.example.infrastructure.TestLogger;
 import org.example.infrastructure.TestServer;
 import org.example.infrastructure.WebDriverManager;
 
-public class TestApp1 {
+public class TestApp1  {
     public static void main(String[] args) {
         TestLogger logger=new TestLogger();
 
