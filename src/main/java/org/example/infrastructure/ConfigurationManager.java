@@ -13,7 +13,7 @@ public class ConfigurationManager {
     }
 
 
-        public String getTestBrowser() {
+    public String getTestBrowser() {
         return getEnvironmentVariableOrDefault("testBrowser", "chrome");
     }
 
@@ -27,4 +27,3 @@ public class ConfigurationManager {
                 System.getenv(envVar);
     }
 }
-
