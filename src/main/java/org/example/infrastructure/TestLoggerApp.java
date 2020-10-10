@@ -2,7 +2,12 @@ package org.example.infrastructure;
 
 public class TestLoggerApp {
     public static void main(String[] args) {
-        TestLogger logger = new TestLogger();
+        TestLogger logger = new TestLogger() {
+            @Override
+            public void log(String msg) {
+
+            }
+        };
 
         logger.log("Start browser");
         //selenium code

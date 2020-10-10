@@ -1,35 +1,52 @@
 package org.example.infrastructure;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class TestLogger {
+public abstract class TestLogger {
 
-    private int step = 0;
+    public abstract void log(String msg);
 
-    public void log(String msg) {
 
-        incriseStep();
-
-        System.out.println(step + ")"
-                + getCurrentTime()
-                + " ["
-                + getThreadName()
-                + "]:"
-                + msg);
-    }
-
-    private String getThreadName() {
+    protected String getThreadName() {
         return Thread.currentThread().getName();
     }
 
-    private String getCurrentTime() {
+    protected String getCurrentTime() {
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss.SSS");
         return sdf.format(new Date());
+
+        /*protected int getStep () {
+            step++;
+            return step;*/
+        }
     }
 
-    private void incriseStep() {
-        step++;
-    }
 
-}
+
+//    } void log(String msg) {
+//        incriseStep();
+//
+//        System.out.println(step + ")"
+//                + getCurrentTime()
+//                + " ["
+//                + getThreadName()
+//                + "]:"
+//                + msg);
+//    }
+
+//    private String getThreadName() {
+//        return Thread.currentThread().getName();
+//    }
+//
+//    private String getCurrentTime() {
+//        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss.SSS");
+//        return sdf.format(new Date());
+//    }
+
+//    private void incriseStep() {
+//        step++;
+
+
+
 
