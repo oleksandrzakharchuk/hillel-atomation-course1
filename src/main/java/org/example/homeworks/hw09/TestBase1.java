@@ -1,6 +1,10 @@
-package org.example.infrastructure;
+package org.example.homeworks.hw09;
 
-public class TestBase {
+import org.example.infrastructure.TestLogger;
+import org.example.infrastructure.TestServer;
+import org.example.infrastructure.WebDriverManager;
+
+public class TestBase1 {
     protected TestLogger logger;
     private WebDriverManager wdm;
 
@@ -22,7 +26,7 @@ public class TestBase {
         afterTest();
         //...
         wdm.closeBrowser(browser);
-           }
+    }
 
     protected void beforeTest() {
         System.out.println("------>DEFOULT BEFORE TEST");
@@ -31,3 +35,4 @@ public class TestBase {
         System.out.println("-----> DEFOLT AFTER TEST");
     }
 }
+

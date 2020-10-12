@@ -2,10 +2,11 @@ package org.example.infrastructure;
 
 public class ConfigurationManager {
     private static ConfigurationManager instance;
+    //public int getLogType;
 
     private ConfigurationManager() {
     }
-    static ConfigurationManager getInstance() {
+    public static ConfigurationManager getInstance() {
         if (instance == null) {
             instance = new ConfigurationManager();
         }
