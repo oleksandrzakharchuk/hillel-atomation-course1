@@ -6,7 +6,12 @@ public class TestBase1 {
 
     protected String browser;
     public void startUp(){
-        logger=new TestLogger();
+        logger= new TestLogger() {
+            @Override
+            public void log(String msg) {
+
+            }
+        };
 
         logger.log("Launch browser");
         wdm=new WebDriverManager();
