@@ -1,8 +1,4 @@
-package org.example.homeworks.hw09;
-
-import org.example.infrastructure.TestLogger;
-import org.example.infrastructure.TestServer;
-import org.example.infrastructure.WebDriverManager;
+package org.example.infrastructure;
 
 public class TestBase1 {
     protected TestLogger logger;
