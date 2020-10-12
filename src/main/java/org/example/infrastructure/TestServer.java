@@ -1,6 +1,6 @@
 package org.example.infrastructure;
 
-public class TestServer  {
+public class TestServer {
     public static String GetUrl() {
 
         switch( ConfigurationManager.getInstance().getTestEnv()) {

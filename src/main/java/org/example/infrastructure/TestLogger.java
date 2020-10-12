@@ -3,7 +3,7 @@ package org.example.infrastructure;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public abstract class TestLogger  {
+public abstract class TestLogger {
 
     public abstract void log(String msg);
 

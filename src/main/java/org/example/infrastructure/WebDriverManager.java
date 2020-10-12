@@ -1,6 +1,6 @@
 package org.example.infrastructure;
 
-public class WebDriverManager  {
+public class WebDriverManager {
 
     public String createBrowser() {
         //public WebDriver createBrowser(){

@@ -1,6 +1,6 @@
 package org.example.infrastructure;
 
-public class TestBase1   {
+public class TestBase1  {
     protected TestLogger logger;
     private WebDriverManager wdm;
 

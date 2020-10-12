@@ -1,6 +1,6 @@
 package org.example.infrastructure;
 
-public class StdTestLogger extends TestLogger  {
+public class StdTestLogger extends TestLogger {
 
     public void log(String msg) {
 

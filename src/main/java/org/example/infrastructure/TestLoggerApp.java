@@ -1,6 +1,6 @@
 package org.example.infrastructure;
 
-public class TestLoggerApp  {
+public class TestLoggerApp {
     public static void main(String[] args) {
         TestLogger logger = new TestLogger() {
             @Override
