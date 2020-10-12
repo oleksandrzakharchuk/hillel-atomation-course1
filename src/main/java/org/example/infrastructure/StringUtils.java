@@ -1,5 +1,6 @@
 package org.example.infrastructure;
 import java.util.Random;
+
 public class StringUtils {
     public static void main(String[] args) {
         System.out.println(randomString("alpha",10));

@@ -1,6 +1,6 @@
 package org.example.infrastructure;
 
-public class ConfigurationManager {
+public class ConfigurationManager  {
     private static ConfigurationManager instance;
     //public int getLogType;
 
