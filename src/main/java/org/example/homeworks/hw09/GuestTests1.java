@@ -1,5 +1,7 @@
 package org.example.homeworks.hw09;
 
+import org.example.infrastructure.TestBase1;
+
 public class GuestTests1 extends TestBase1 {
     public  void TestOpenCatalog(){
         logger.log("Precondition1");
