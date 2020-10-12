@@ -1,14 +1,14 @@
-package org.example.infrastructure;
+package org.example.infrastructur;
 
-public class ConfigurationManager  {
-    private static ConfigurationManager instance;
+public class ConfigurationManager {
+    private static org.example.infrastructure.ConfigurationManager instance;
     //public int getLogType;
 
     private ConfigurationManager() {
     }
-    public static ConfigurationManager getInstance() {
+    public static org.example.infrastructure.ConfigurationManager getInstance() {
         if (instance == null) {
-            instance = new ConfigurationManager();
+            instance = new org.example.infrastructure.ConfigurationManager();
         }
         return instance;
     }
@@ -27,4 +27,4 @@ public class ConfigurationManager  {
                 defaultVole :
                 System.getenv(envVar);
     }
-}
+
