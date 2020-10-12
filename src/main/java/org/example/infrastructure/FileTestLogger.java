@@ -6,7 +6,7 @@ import java.io.FileWriter;
 public class FileTestLogger extends TestLogger {
 
     private File file;
-    public FileTestLogger()  {
+    public FileTestLogger() {
         file=new File("report"+System.currentTimeMillis()+"log");
     }
 
