@@ -6,12 +6,7 @@ import org.example.infrastructure.WebDriverManager;
 
 public class TestApp11 {
     public static void main(String[] args) {
-        TestLogger logger = new TestLogger() {
-            @Override
-            public void log(String msg) {
-
-            }
-        };
+        TestLogger logger = new TestLogger();
 
         logger.log("Launch browser");
         WebDriverManager wdm = new WebDriverManager();
