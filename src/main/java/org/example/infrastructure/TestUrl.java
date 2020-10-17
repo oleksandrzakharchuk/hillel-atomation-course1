@@ -1,36 +1,77 @@
 package org.example.infrastructure;
 
+
+
 public class TestUrl {
+    private String protocol;
+    private String domain;
+    private String port;
+    private String path;
+    private String params;
+
+    private TestUrl(){}
+
+    public TestUrl(String protocol, String domain, String port, String path, String params) {
+        this.protocol = protocol;
+        this.domain = domain;
+        this.port = port;
+        this.path = path;
+        this.params = params;
+
+    }
+
+    public String getProtocol() {return protocol;}
+
+    public String getDomain() {return domain;}
+
+    public String getPort() {return port;}
+
+    public String getPath() {return path;}
+
+    public String getParams() {return params;}
+
     public static class Builder {
+        private TestUrl url;
 
-        public String withProtocol(String protocol) {
-return "protocol";
+        public Builder(){
+           url=new TestUrl();
+    }
+
+    public Builder withProtocol(String protocol) {
+    url.protocol= protocol;
+    return this;
         }
 
-        public String withDomain(String domain) {
-            return "domain";
+        public Builder withDomain(String domain) {
+
+            return this;
         }
 
-        public String withPort(String port) {
-            return "port";
+        public Builder withPort(String port) {
+
+            return this;
         }
 
-        public String withPath(String path) {
-            return "path";
+        public Builder withPath(String path) {
 
-        }
-
-        public String withParm(String parm) {
-return "parm";
-        }
-
-        public String withParm(String key, String value) {
-return "key";
+            return this;
 
         }
 
-        public String build(return url;) {
-return "url";
+        public Builder withParam(String param) {
+
+            return this;
+        }
+
+        public Builder withParam(String key, String value) {
+
+            return this;
+
+        }
+
+        public String  build() {
+        return "";
+
         }
     }
 
