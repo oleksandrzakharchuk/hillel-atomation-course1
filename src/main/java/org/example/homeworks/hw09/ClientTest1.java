@@ -1,6 +1,6 @@
 package org.example.homeworks.hw09;
 
-import org.example.infrastructure.TestBase1;
+import org.example.infrastructure.base.TestBase1;
 
 public class ClientTest1 extends TestBase1 {
 

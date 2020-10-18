@@ -1,7 +1,6 @@
 package org.example.homeworks.hw09;
 
 import org.example.infrastructure.TestLogger;
-import org.example.infrastructure.TestServer;
 import org.example.infrastructure.WebDriverManager;
 
 public class TestBaseGameS {
@@ -22,7 +21,7 @@ public class TestBaseGameS {
         browser= wdm.createBrowser();
 
         logger.log("Open website");
-        System.out.println("-->" + browser + " opening " + TestServer.GetUrl());
+        System.out.println("-->" + browser + " opening " );
 //...
         beforeTest();
     }

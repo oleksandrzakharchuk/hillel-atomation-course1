@@ -1,5 +1,7 @@
 package org.example.infrastructure;
 
+import org.example.infrastructure.config.ConfigurationManager;
+
 public class WebDriverManager {
 
     public String createBrowser() {

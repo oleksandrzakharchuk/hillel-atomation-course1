@@ -1,4 +1,4 @@
-package org.example.infrastructure;
+package org.example.infrastructure.utils;
 import java.util.Random;
 
 public class StringUtils{

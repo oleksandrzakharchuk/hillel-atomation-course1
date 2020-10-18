@@ -1,4 +1,7 @@
-package org.example.infrastructure;
+package org.example.infrastructure.base;
+
+import org.example.infrastructure.TestLogger;
+import org.example.infrastructure.WebDriverManager;
 
 public class TestBase1  {
     protected TestLogger logger;
@@ -18,7 +21,7 @@ public class TestBase1  {
         browser= wdm.createBrowser();
 
         logger.log("Open website");
-        System.out.println("-->" + browser + " opening " + TestServer.GetUrl());
+        System.out.println("-->" + browser + " opening ");// + TestUrl.editorUrl());
 //...
         beforeTest();
     }
@@ -35,5 +38,13 @@ public class TestBase1  {
     protected void afterTest() {
         System.out.println("-----> DEFOLT AFTER TEST");
     }
+
+    /*private TestLogger getLogger(){
+switch (ConfigurationManager.getInstance().getLogType()){
+    case "file";
+    return new FileTestLogger();*/
 }
+
+
+
 

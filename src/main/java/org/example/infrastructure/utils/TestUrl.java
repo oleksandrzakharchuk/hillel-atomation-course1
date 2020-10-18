@@ -1,4 +1,4 @@
-package org.example.infrastructure;
+package org.example.infrastructure.utils;
 
 
 
@@ -19,6 +19,9 @@ public class TestUrl {
         this.path = path;
         this.params = params;
 
+    }
+
+    public static void editorUrl() {
     }
 
     public String getProtocol() {
