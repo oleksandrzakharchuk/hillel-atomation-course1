@@ -1,7 +1,7 @@
 package org.example.homeworks.hw09;
 
-import org.example.infrastructure.TestLogger;
-import org.example.infrastructure.WebDriverManager;
+import org.example.infrastructure.logger.TestLogger;
+import org.example.infrastructure.wdm.WebDriverManager;
 
 public class TestApp11 {
     public static void main(String[] args) {
@@ -13,7 +13,27 @@ public class TestApp11 {
         };
 
         logger.log("Launch browser");
-        WebDriverManager wdm = new WebDriverManager();
+        WebDriverManager wdm = new WebDriverManager() {
+            @Override
+            public String getBrowser() {
+                return null;
+            }
+
+            @Override
+            public void destroyBrowser(String browser) {
+
+            }
+
+            @Override
+            public String createBrowser() {
+                return null;
+            }
+
+            @Override
+            public void closeBrowser(String browser) {
+
+            }
+        };
         String browser = wdm.createBrowser();
 
         logger.log("Open website");

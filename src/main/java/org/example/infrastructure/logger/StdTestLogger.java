@@ -1,4 +1,4 @@
-package org.example.infrastructure;
+package org.example.infrastructure.logger;
 
 public class StdTestLogger extends TestLogger {
 

@@ -1,4 +1,4 @@
-package org.example.infrastructure;
+package org.example.infrastructure.logger;
 
 import java.io.File;
 import java.io.FileWriter;
