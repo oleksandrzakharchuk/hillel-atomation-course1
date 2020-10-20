@@ -2,27 +2,36 @@ package org.example.infrastructure.logger;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 
 public class FileTestLogger extends TestLogger {
 
     private File file;
-    public FileTestLogger() {
-        file=new File("report"+System.currentTimeMillis()+"log");
+
+    public FileTestLogger(String logName) {
+        file = new File(logName);
     }
 
     @Override
     public void log(String msg) {
+        FileWriter fw = null;
 
-           try {
+        try {
+            fw = new FileWriter(file, true);
+            fw.append(getCurrentTime() + "[" + getThreadName() + "]" + msg + "\n");
 
-        FileWriter fw = new FileWriter(file, true);
-        fw.append( getCurrentTime() + "[" + getThreadName() + "]" + msg+"\n");
-
-
-        fw.flush();
-        fw.close();
-    }catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
+        } finally {
+            if (fw != null) {
+                try {
+                    fw.flush();
+                    fw.close();
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 }

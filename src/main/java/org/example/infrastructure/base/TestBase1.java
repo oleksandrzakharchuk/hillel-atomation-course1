@@ -41,8 +41,9 @@ public abstract class TestBase1 {
 
     private TestLogger getLogger() {
         switch (ConfigurationManager.getInstance().getLogType()) {
+
             case "file":
-                return new FileTestLogger();
+                return new FileTestLogger(System.currentTimeMillis()+"_file.log");
             case "std":
             default:
                 return new StdTestLogger();
