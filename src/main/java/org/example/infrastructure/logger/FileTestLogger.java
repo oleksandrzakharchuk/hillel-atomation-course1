@@ -36,10 +36,4 @@ public class FileTestLogger extends TestLogger {
     }
 }
 
-    //increaseStep() {
-
-//    }
-//
-//    System.out.println(getStep()+")"getCurrentTime()+"["+getThreadName()+"]"+msg)
-//    }
 
