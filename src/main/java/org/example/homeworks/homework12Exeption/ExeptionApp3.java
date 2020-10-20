@@ -1,4 +1,4 @@
-package org.example.homeworks.hw12Exeptions;
+package org.example.homeworks.homework12Exeption;
 
 import java.net.URL;
 

@@ -1,7 +1,6 @@
-package org.example.homeworks.hw12Exeptions;
+package org.example.homeworks.homework12Exeption;
 
-import java.io.File;
-import java.io.FileWriter;
+import java.io.File;import java.io.FileWriter;
 
 
 public class ExeptionApp4 {

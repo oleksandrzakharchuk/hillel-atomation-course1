@@ -1,4 +1,4 @@
-package org.example.homeworks.hw12Exeptions;
+package org.example.homeworks.homework12Exeption;
 
 import org.example.infrastructure.wdm.DefaultWebDriverManager;
 import org.example.infrastructure.wdm.WebDriverManager;
