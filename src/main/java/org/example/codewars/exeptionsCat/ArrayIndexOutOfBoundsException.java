@@ -23,8 +23,8 @@ public class ArrayIndexOutOfBoundsException extends Throwable {
         } catch (ArithmeticException e) {
             System.out.println("Нельзя котов делить на ноль!");
 
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("ArrayIndexOutOfBoundsException");
+//        } catch (ArrayIndexOutOfBoundsException e) {
+//            System.out.println("ArrayIndexOutOfBoundsException");
 //       //програма аварийно закрылась так как не обрабатівает exeption ArrayIndexOutOfBoundsException
 //       //java: exception org.example.codewars.exeptionsCat.ArrayIndexOutOfBoundsException
 //            // is never thrown in body of corresponding try statement
