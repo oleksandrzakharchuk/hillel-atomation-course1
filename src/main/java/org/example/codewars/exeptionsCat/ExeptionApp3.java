@@ -1,4 +1,4 @@
-package org.example.homeworks.homework12Exeption;
+package org.example.codewars.exeptionsCat;
 
 import java.net.URL;
 
