@@ -1,4 +1,4 @@
-package org.example.codewars;
+package org.example.codewars.exeptionsCat;
 
 public class ExceptionCat {
     public static void main(String[] args) {

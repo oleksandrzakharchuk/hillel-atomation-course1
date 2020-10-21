@@ -1,4 +1,4 @@
-package org.example.codewars;
+package org.example.codewars.exeptionsCat;
 
 public class ArithmeticExceptionCat1 {
 
