@@ -42,6 +42,8 @@ try {
     fw.close();
     }catch (IOException e){
     e.printStackTrace();
+    }finally {
+    System.out.println();
     }
     }
     }

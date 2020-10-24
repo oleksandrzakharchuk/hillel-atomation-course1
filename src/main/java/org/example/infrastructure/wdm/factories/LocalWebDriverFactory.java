@@ -7,21 +7,24 @@ public class LocalWebDriverFactory implements WebDriverFactory {
 
 @Override
     public String create(){
-    WebDriverType webDriverType=
+        WebDriverType webDriverType=
             WebDriverType.valueOf(ConfigurationManager.getInstance().getTestBrowser().toUpperCase());
-    switch (webDriverType){
+
+    switch (webDriverType)//switch (String)
+    {
         case CHROME:
         case HEADLESS_CHROME:
             return "LOCAL Google Chrome";
         case FIREFOX:
-            return "LOCAL Mazilla Firefox";
+            return "LOCAL Mozilla Firefox";
         case EDGE:
             return "LOCAL Internet Explorer";
         case SAFARI:
             return "LOCAL Apple Safari";
         default:
-            return "";
-
+           // return "";
+            throw new IllegalArgumentException();
+    }
     }
 }
-}
+
