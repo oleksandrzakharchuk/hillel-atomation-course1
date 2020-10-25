@@ -1,6 +1,8 @@
 package org.example.infrastructure.base;
 
 import org.example.infrastructure.config.ConfigurationManager;
+import org.example.infrastructure.data.FileUserDataMapper;
+import org.example.infrastructure.data.UsersDataMapper;
 import org.example.infrastructure.logger.FileTestLogger;
 import org.example.infrastructure.logger.StdTestLogger;
 import org.example.infrastructure.logger.TestLogger;
@@ -12,6 +14,8 @@ public abstract class TestBase1 {
     protected final TestLogger logger = getLogger();
     private WebDriverManager wdm;
     protected String browser;
+
+    protected UsersDataMapper usersMapper=new FileUserDataMapper();
 
 
     public void startUp() {
