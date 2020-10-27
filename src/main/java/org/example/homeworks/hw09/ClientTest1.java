@@ -5,8 +5,12 @@ import org.example.infrastructure.data.User;
 
 public class ClientTest1 extends TestBase1 {
 
+
+
     @Override
     protected void beforeTest() {
+super.beforeTest();
+
         logger.log("Login client");
         //User regularuser=new User("", "", "");
         User regularuser=usersMapper.FindUserByEmail("test5@gmail.com");
@@ -25,10 +29,7 @@ public class ClientTest1 extends TestBase1 {
 
     }
 
-    public void testOrdersPage() {
-        logger.log("Check orders are present");
-
-    }
+    public void testOrdersPage() { logger.log("Check orders are present");}
 
     public void testCompleteOrdersPage() {
         logger.log("Check completed order");

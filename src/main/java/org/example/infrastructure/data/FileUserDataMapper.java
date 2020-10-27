@@ -47,7 +47,6 @@ private User [] users=new User[11];
         }
 
 
-    public User[] getAll() {
-        return new User[0];
+    public User[] getAll() {return users;}
     }
-}
+
