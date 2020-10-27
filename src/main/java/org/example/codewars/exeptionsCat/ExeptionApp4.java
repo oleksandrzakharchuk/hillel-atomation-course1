@@ -1,9 +1,11 @@
 package org.example.codewars.exeptionsCat;
 
 import org.example.infrastructure.data.FileUserDataMapper;
+import org.example.infrastructure.data.User;
 import org.example.infrastructure.data.UsersDataMapper;
 
-import java.io.File;import java.io.FileWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -45,6 +47,7 @@ public class ExeptionApp4 {
 //9,test9@gmail.com,123456
 //10,test10@gmail.com,123456
 //11,test11@gmail.com,123456
+        User regularuser=mapper.FindUserByEmail("test15@gmail.com");
 }
 
     public static void appendLineFile(String file, String line)  throws Exception //throws Exception

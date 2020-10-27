@@ -42,8 +42,8 @@ private User [] users=new User[11];
                 return u;
             }
         }
-          // throw new UserNotFoundException("User with email"+email+"was not found");
-            return null;
+           throw new UserNotFoundException("User with email"+email+"was not found");
+
         }
 
 
