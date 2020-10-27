@@ -36,6 +36,10 @@ public String getRunOn(){
         return getEnvironmentVariableOrDefault("mobilePlatform", "");
     }
 
+    public String getJdbcConnectionUrl(){
+        return getEnvironmentVariableOrDefault("JDBC CONNECTION URL","database.sqlite");
+    }
+
     String getEnvironmentVariableOrDefault(String envVar, String defaultVole) {
         return System.getenv(envVar) == null || System.getenv(envVar).isBlank() ?
                 defaultVole :
