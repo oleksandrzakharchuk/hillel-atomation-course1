@@ -1,8 +1,10 @@
 package org.example.infrastructure.data;
 
+import java.util.ArrayList;
+
 public interface UsersDataMapper {
      User FindUserByEmail(String email);
 
-     User[] getAll();
+     ArrayList<User> getAll();
 
 }

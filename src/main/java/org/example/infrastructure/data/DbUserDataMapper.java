@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class DbUserDataMapper implements UsersDataMapper {
 
@@ -36,7 +37,7 @@ public class DbUserDataMapper implements UsersDataMapper {
     }
 
     @Override
-    public User[] getAll() {
-        return new User[0];
+    public ArrayList<User> getAll() {
+        return new ArrayList<>();
     }
 }
