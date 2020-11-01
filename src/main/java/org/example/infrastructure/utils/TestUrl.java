@@ -1,18 +1,20 @@
 package org.example.infrastructure.utils;
 
 
+import java.util.HashMap;
+import java.util.Map;
 
 public class TestUrl {
     private String protocol = "";
     private String domain = "";
     private String port = "";
     private String path = "";
-    private String params = "";
+    private Map<String, String> params = new HashMap<>();
 
     private TestUrl() {
     }
 
-    public TestUrl(String protocol, String domain, String port, String path, String params) {
+    public TestUrl(String protocol, String domain, String port, String path, Map<String, String> params) {
         this.protocol = protocol;
         this.domain = domain;
         this.port = port;
@@ -40,12 +42,12 @@ public class TestUrl {
         return path;
     }
 
-    public String getParams() {
+
+    public Map<String, String> getParams() {
         return params;
     }
-
     public static class Builder {
-        private TestUrl url;
+        private final TestUrl url;
 
         public Builder() {
             url = new TestUrl();
@@ -73,54 +75,67 @@ public class TestUrl {
         }
 
         public Builder withParam(String param) {
-            url.params += param + "&";
+            url.params.put(param, " ");
             return this;
         }
 
         public Builder withParam(String key, String value) {
-            url.params += key + "=" + value + "&";
+            url.params.put(key, value);
             return this;
-
         }
-
-
+        public Builder withParams(Map<String, String>params){
+            url.params.putAll(params);
+            return  this;
+}
+//TODO:Switch to java net.URL
+        //public URL build();
         public String build() {
-            String resultUrl = "";
+            String resultUrl ="";
             //protocol://-domaim-:port-/path-?params&
 
             if (url.protocol.isBlank())
-                resultUrl += "https://";//TODO: change to throwing exception
-            else if(!url.protocol.endsWith("://"))
+                throw new IllegalArgumentException("Protocol cannot be blank");
+
+            else if (!url.protocol.endsWith("://"))
                 resultUrl += url.protocol + "://";
             else
                 resultUrl += url.protocol;
 
 
-                if (url.domain.isBlank()) {//isBlank()==!=null&&url.domain.trim().isEmpty()
-                    resultUrl += "localhost";//TODO:change to throwing exception
-                } else {
-                    resultUrl += url.domain;
-                }
-                if (!url.port.isBlank()) {
-                    resultUrl += url.port.startsWith(":") ? url.port : ":" + url.port;
-                }
-
-
-                if (!url.path.isBlank()) {
-                    resultUrl += url.path.startsWith("/") ? url.path : "/" + url.path;
-                }
-
-
-                if (!url.params.isBlank()) {
-                    resultUrl += "?" + url.params;
-                }
-                return resultUrl;
-
+            if (url.domain.isBlank()) {//isBlank()==!=null&&url.domain.trim().isEmpty()
+                throw new IllegalArgumentException("Domain cannot be blank");
+            } else {
+                resultUrl += url.domain;
+            }
+            if (!url.port.isBlank()) {
+                resultUrl += url.port.startsWith(":") ? url.port : ":" + url.port;
             }
 
-        }
+
+            if (!url.path.isBlank()) {
+                resultUrl += url.path.startsWith("/") ? url.path : "/" + url.path;
+
     }
 
+            String parameters = "?";
+            if (!url.params.isEmpty()){
+                    for(Map.Entry<String, String> param:url.params.entrySet()){
+                    if(param.getValue().isEmpty())
+                        parameters += param.getKey()+"&";
+                    else
+                        parameters += param.getKey()+"="+param.getValue()+"&";
+
+        }
+        }else{
+                parameters ="";
+        }
+        return resultUrl += parameters;
+        }
+        public TestUrl getUrl(){
+        return url;
+        }
+        }
+        }
 
 
 

@@ -40,7 +40,12 @@ private List<User> users=new ArrayList<>();
 
         }
 
+    @Override
+    public boolean[] getAll() {
+        return new boolean[0];
+    }
 
-    public ArrayList<User> getAll() {return new ArrayList<>();}
+
+    // public List<Object> getAll() {return new ArrayList<Object>();}
     }
 
