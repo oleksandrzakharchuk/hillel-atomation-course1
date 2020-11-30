@@ -1,7 +1,7 @@
 package org.example.homeworks.hw09;
 
-import org.example.infrastructure.base.TestBase1;
-import org.example.infrastructure.data.User;
+import org.example.base.TestBase1;
+import org.example.data.User;
 
 public class ClientTest1 extends TestBase1 {
 

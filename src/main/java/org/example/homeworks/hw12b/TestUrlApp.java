@@ -1,6 +1,6 @@
 package org.example.homeworks.hw12b;
 
-import org.example.infrastructure.utils.TestUrl;
+import org.example.utils.TestUrl;
 
 public class TestUrlApp {
     public static void main(String[] args) {

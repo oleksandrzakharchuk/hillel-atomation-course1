@@ -1,6 +1,6 @@
 package org.example.homeworks.hw12Exeption;
 
-import org.example.infrastructure.utils.TestUrl;
+import org.example.utils.TestUrl;
 
 import java.util.HashMap;
 import java.util.Map;

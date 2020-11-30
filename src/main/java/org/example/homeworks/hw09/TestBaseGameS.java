@@ -1,13 +1,14 @@
 package org.example.homeworks.hw09;
 
-import org.example.infrastructure.logger.TestLogger;
-import org.example.infrastructure.wdm.WebDriverManager;
+import org.example.logger.TestLogger;
+import org.example.wdm.WebDriverManager;
+import org.openqa.selenium.WebDriver;
 
 public class TestBaseGameS {
     protected TestLogger logger;
     private WebDriverManager wdm;
 
-    protected String browser;
+    protected WebDriver browser;
     public void startUp(){
         logger= new TestLogger() {
             @Override
@@ -24,18 +25,28 @@ public class TestBaseGameS {
             }
 
             @Override
-            public void destroyBrowser(String browser) {
+            public void destroyBrowser(WebDriver browser) {
 
             }
 
+           /* @Override
+            public void destroyBrowserWebDriver browser) {
+
+            }*/
+
             @Override
-            public String createBrowser() {
+            public WebDriver createBrowser() {
                 return null;
             }
 
             @Override
-            public void closeBrowser(String browser) {
+            public void closeBrowser(WebDriver browser) {
 
+            }
+
+            @Override
+            public WebDriver getAvailableWebDriver() {
+                return null;
             }
         };
         browser= wdm.createBrowser();

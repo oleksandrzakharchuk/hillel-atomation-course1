@@ -1,7 +1,7 @@
 package org.example.homeworks.hw12Exeption;
 
-import org.example.infrastructure.wdm.DefaultWebDriverManager;
-import org.example.infrastructure.wdm.WebDriverManager;
+import org.example.wdm.DefaultWebDriverManager;
+import org.example.wdm.WebDriverManager;
 
 public class ExeptionApp2 {
     public static void main(String[] args) {

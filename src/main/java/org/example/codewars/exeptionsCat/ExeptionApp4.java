@@ -1,13 +1,12 @@
 package org.example.codewars.exeptionsCat;
 
-import org.example.infrastructure.data.FileUserDataMapper;
-import org.example.infrastructure.data.User;
-import org.example.infrastructure.data.UsersDataMapper;
+import org.example.data.FileUserDataMapper;
+import org.example.data.User;
+import org.example.data.UsersDataMapper;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Arrays;
 
 
 public class ExeptionApp4 {
@@ -34,8 +33,8 @@ public class ExeptionApp4 {
 
 //...
         System.out.println("Other logic");*/
-        UsersDataMapper mapper=new FileUserDataMapper();
-        System.out.println(Arrays.toString(mapper.getAll()));
+        UsersDataMapper mapper=new FileUserDataMapper("users.text");
+        System.out.println(mapper.getAll());
 //1,test1@gmail.com,123456
 //2,test2@gmail.com,123456
 //3,test2@gmail.com,123456
@@ -47,7 +46,11 @@ public class ExeptionApp4 {
 //9,test9@gmail.com,123456
 //10,test10@gmail.com,123456
 //11,test11@gmail.com,123456
+        System.out.println(mapper.FindUserByEmail("test6@gmail.com"));
+
         User regularuser=mapper.FindUserByEmail("test15@gmail.com");
+        System.out.println(regularuser);
+
 }
 
     public static void appendLineFile(String file, String line)  throws Exception //throws Exception
