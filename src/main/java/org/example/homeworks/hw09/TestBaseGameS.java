@@ -6,19 +6,10 @@ import org.openqa.selenium.WebDriver;
 
 public class TestBaseGameS {
     protected TestLogger logger;
-    private WebDriverManager wdm;
+    private final WebDriverManager wdm;
 
-    protected WebDriver browser;
-    public void startUp(){
-        logger= new TestLogger() {
-            @Override
-            public void log(String msg) {
-
-            }
-        };
-
-        logger.log("Launch browser");
-        wdm= new WebDriverManager() {
+    {
+        wdm = new WebDriverManager() {
             @Override
             public String getBrowser() {
                 return null;
@@ -29,10 +20,15 @@ public class TestBaseGameS {
 
             }
 
-           /* @Override
-            public void destroyBrowserWebDriver browser) {
+            @Override
+            public void destroyBrowser(String browser) {
 
-            }*/
+            }
+
+       /* @Override
+        public void destroyBrowserWebDriver browser) {
+
+        }*/
 
             @Override
             public WebDriver createBrowser() {
@@ -49,6 +45,18 @@ public class TestBaseGameS {
                 return null;
             }
         };
+    }
+
+    protected WebDriver browser;
+    public void startUp(){
+        logger= new TestLogger() {
+            @Override
+            public void log(String msg) {
+
+            }
+        };
+
+        logger.log("Launch browser");
         browser= wdm.createBrowser();
 
         logger.log("Open website");

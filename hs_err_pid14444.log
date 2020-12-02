@@ -1,0 +1,198 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 268435456 bytes for Failed to commit area from 0x0000000701600000 to 0x0000000711600000 of length 268435456.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./open/src/hotspot/os/windows/os_windows.cpp:3275), pid=14444, tid=12540
+#
+# JRE version:  (11.0.8+10) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (11.0.8+10-LTS, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:56103,suspend=y,server=n -ea -Didea.test.cyclic.buffer.size=1048576 -javaagent:C:\Users\zahir\AppData\Local\JetBrains\IdeaIC2020.2\captureAgent\debugger-agent.jar -Dfile.encoding=UTF-8 com.intellij.rt.junit.JUnitStarter -ideVersion5 -junit4 calc.CalcTest
+
+Host: Intel(R) Core(TM) i5-4210U CPU @ 1.70GHz, 4 cores, 15G,  Windows 10 , 64 bit Build 17763 (10.0.17763.475)
+Time: Wed Dec  2 12:49:18 2020 O?ieyia?y (ceia) elapsed time: 0 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000023210fbe800):  JavaThread "Unknown thread" [_thread_in_vm, id=12540, stack(0x0000008403f00000,0x0000008404000000)]
+
+Stack: [0x0000008403f00000,0x0000008404000000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x601aea]
+V  [jvm.dll+0x737fef]
+V  [jvm.dll+0x739675]
+V  [jvm.dll+0x739cf3]
+V  [jvm.dll+0x242848]
+V  [jvm.dll+0x5fef8a]
+V  [jvm.dll+0x5f3eb5]
+V  [jvm.dll+0x2f651c]
+V  [jvm.dll+0x2f63a2]
+V  [jvm.dll+0x2fb056]
+V  [jvm.dll+0x33ce9f]
+V  [jvm.dll+0x33c8d0]
+V  [jvm.dll+0x2d4768]
+V  [jvm.dll+0x2d58c6]
+V  [jvm.dll+0x713e67]
+V  [jvm.dll+0x71570f]
+V  [jvm.dll+0x349c19]
+V  [jvm.dll+0x6f97f0]
+V  [jvm.dll+0x3b2a5f]
+V  [jvm.dll+0x3b4e81]
+C  [jli.dll+0x5213]
+C  [ucrtbase.dll+0x2268a]
+C  [KERNEL32.DLL+0x17974]
+C  [ntdll.dll+0x5a0b1]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000002320ed6abf0, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x0000023210fd4800 GCTaskThread "GC Thread#0" [stack: 0x0000008404000000,0x0000008404100000] [id=4156]
+  0x0000023211031000 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000008404100000,0x0000008404200000] [id=13628]
+  0x0000023211034800 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000008404200000,0x0000008404300000] [id=19920]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffe668b2f67]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0000023210fbcb20] Heap_lock - owner thread: 0x0000023210fbe800
+
+Heap address: 0x0000000701600000, size: 4074 MB, Compressed Oops mode: Non-zero based: 0x0000000701600000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff7bbf20000 - 0x00007ff7bbf2f000 	C:\Program Files\Java\jdk-11.0.8\bin\java.exe
+0x00007ffea1140000 - 0x00007ffea132d000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffe9f040000 - 0x00007ffe9f0f3000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffe9d440000 - 0x00007ffe9d6d5000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffe9d340000 - 0x00007ffe9d43a000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffe991d0000 - 0x00007ffe991e8000 	C:\Program Files\Java\jdk-11.0.8\bin\jli.dll
+0x00007ffea0f30000 - 0x00007ffea0fd3000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffea0bc0000 - 0x00007ffea0c5e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffe9e4f0000 - 0x00007ffe9e58e000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffea0fe0000 - 0x00007ffea1102000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffe9ed40000 - 0x00007ffe9eed7000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffe9db10000 - 0x00007ffe9db30000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffe9e590000 - 0x00007ffe9e5b9000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffe9d8c0000 - 0x00007ffe9da5c000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffe9d270000 - 0x00007ffe9d310000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffe8ec50000 - 0x00007ffe8eec9000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17763.1577_none_de7444545348a3d0\COMCTL32.dll
+0x00007ffea0880000 - 0x00007ffea0bad000 	C:\WINDOWS\System32\combase.dll
+0x00007ffe9d1f0000 - 0x00007ffe9d26e000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffe91980000 - 0x00007ffe9198a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffe97e70000 - 0x00007ffe97e85000 	C:\Program Files\Java\jdk-11.0.8\bin\VCRUNTIME140.dll
+0x00007ffea0f00000 - 0x00007ffea0f2e000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffe77f60000 - 0x00007ffe77ffb000 	C:\Program Files\Java\jdk-11.0.8\bin\msvcp140.dll
+0x00007ffe665d0000 - 0x00007ffe670b6000 	C:\Program Files\Java\jdk-11.0.8\bin\server\jvm.dll
+0x00007ffea0bb0000 - 0x00007ffea0bb8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffe86fe0000 - 0x00007ffe86fe9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffea06e0000 - 0x00007ffea074d000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffe968b0000 - 0x00007ffe968d4000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffe96870000 - 0x00007ffe9689d000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x00007ffe9db30000 - 0x00007ffe9db7a000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x00007ffe9d120000 - 0x00007ffe9d131000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x00007ffe99860000 - 0x00007ffe99870000 	C:\Program Files\Java\jdk-11.0.8\bin\verify.dll
+0x00007ffe8e470000 - 0x00007ffe8e65d000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffe8e440000 - 0x00007ffe8e46a000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffe95e40000 - 0x00007ffe95e68000 	C:\Program Files\Java\jdk-11.0.8\bin\java.dll
+0x00007ffe992d0000 - 0x00007ffe992da000 	C:\Program Files\Java\jdk-11.0.8\bin\jimage.dll
+0x00007ffe78160000 - 0x00007ffe78198000 	C:\Program Files\Java\jdk-11.0.8\bin\jdwp.dll
+0x00007ffe98080000 - 0x00007ffe9808e000 	C:\Program Files\Java\jdk-11.0.8\bin\instrument.dll
+0x00007ffe97650000 - 0x00007ffe97666000 	C:\Program Files\Java\jdk-11.0.8\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-11.0.8\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17763.1577_none_de7444545348a3d0;C:\Program Files\Java\jdk-11.0.8\bin\server
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:56103,suspend=y,server=n -ea -Didea.test.cyclic.buffer.size=1048576 -javaagent:C:\Users\zahir\AppData\Local\JetBrains\IdeaIC2020.2\captureAgent\debugger-agent.jar -Dfile.encoding=UTF-8 
+java_command: com.intellij.rt.junit.JUnitStarter -ideVersion5 -junit4 calc.CalcTest
+java_class_path (initial): C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.1\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.1\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.1\plugins\junit\lib\junit-rt.jar;C:\Users\zahir\IdeaProjects\zakharchuk-automcourse3\target\test-classes;C:\Users\zahir\IdeaProjects\zakharchuk-automcourse3\target\classes;C:\Users\zahir\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\zahir\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\zahir\.m2\repository\org\seleniumhq\selenium\selenium-java\3.141.59\selenium-java-3.141.59.jar;C:\Users\zahir\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\zahir\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\zahir\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.141.59\selenium-edge-driver-3.141.59.jar;C:\Users\zahir\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.141.59\selenium-firefox-driver-3.141.59.jar;C:\Users\zahir\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.141.59\selenium-ie-driver-3.141.59.jar;C:\Users\zahir\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.141.59\selenium-opera-driver-3.141.59.jar;C:\Users\zahir\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.141.59\selenium-remote-driver-3.141.59.jar;C:\Users\zahir\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.141.59\selenium-safari-driver-3.141.59.jar;C:\Users\zahir\.m2\repository\org\seleniumhq\selenium\selenium-support\3.141.59\selenium-support-3.141.59.jar;C:\Users\zahir\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\zahir\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\zahir\.m2\repository\com\google\guava\guava\25.0-jre\guava-25.0-jr
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 268435456                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4271898624                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5830732                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122913754                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122913754                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-11.0.8
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jdk-11.0.8bin;C:\Program Files\apache-maven-3.6.3\bin;C:\Program Files\Git\cmd;C:\chromedriver.exe;C:\Ruby26-x64\bin;C:\Users\zahir\AppData\Local\Microsoft\WindowsApps;C:\Program Files\apache-maven-3.6.3\bin;
+USERNAME=zahir
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 69 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 17763 (10.0.17763.475)
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 69 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, fma
+
+Memory: 4k page, system-wide physical 16288M (779M free)
+TotalPageFile size 28771M (AvailPageFile size 105M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 52M, peak: 308M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (11.0.8+10-LTS) for windows-amd64 JRE (11.0.8+10-LTS), built on Jun 16 2020 05:53:08 by "mach5one" with unknown MS VC++:1916
+
+END.
