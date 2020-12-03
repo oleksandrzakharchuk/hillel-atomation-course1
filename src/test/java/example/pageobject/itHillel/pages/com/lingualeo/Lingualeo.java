@@ -1,5 +1,5 @@
 package example.pageobject.itHillel.pages.com.lingualeo;
-
+import org.example.base.TestBase1;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,13 +8,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
-public class Lingualeo {
+public class Lingualeo extends TestBase1 {
     private WebDriver webDriver;
 
     @Before
     public void setUp() {
-        System.out.println("Start browser");
+        logger.log("Start browser");
         System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
         webDriver = new ChromeDriver();
 
@@ -22,64 +23,58 @@ public class Lingualeo {
         webDriver.get("https://lingualeo.com/ru/");
 
     }
-
     @After
     public void cleanUp() {
-        System.out.println("Close browser");
+        logger.log("Close browser");
         if (webDriver != null)
             webDriver.quit();
     }
 
     @Test
     public void testCheckUrlTitle() {
-        System.out.println("Check URL");
+        logger.log("Check URL");
         assertEquals("https://lingualeo.com/ru", webDriver.getCurrentUrl());
         System.out.println(webDriver.getCurrentUrl());
     }
 
     @Test
     public void testCheckTitle() {
-        System.out.println("Check Title");
+        logger.log("Check Title");
         assertEquals("Lingualeo — иностранные языки онлайн", webDriver.getTitle());
         System.out.println(webDriver.getTitle());
     }
-
     @Test
-    public void TestFindingElements() {
-        System.out.println("Finding the element 'LinguaLeo'.");
-        webDriver.findElement(new By.ByXPath("//*[@id=\"app\"]/div/div[1]/div[1]/div[3]/div/div[1]/div[1]/a"));
-        System.out.println(" 'LinguaLeo' found");
+    public void testSuccessLogin() throws InterruptedException {
+        //TestLogger logger = null;
+        // System.out.println("Finding the element 'Войти' ");
+        // assert logger != null;
+        logger.log("Click on 'Войти'");
+        webDriver.findElement(By.cssSelector(".ll-leokit__site-menu__auth-btn")).click();
 
-    }
-
-        /*@Test
-        public void TestFindElementCourses(){
-            System.out.println("Finding the element 'Courses'.");
-            webDriver.findElement(new By.ByXPath("//*[@id=\"app\"]/div/div[1]/div[1]/div[3]/div/ul/li[4]/div/div/a/span/span[2]"));
-            System.out.println(" 'Courses' found");
-        }*/
-
-        /*System.out.println("Finding the element 'Grammatical'");
-        webDriver.findElement(new By.ByXPath("//*[@id=\"app\"]/div/div[1]/div[1]/div[3]/div/ul/li[4]/div/div/ul/li[1]/div/div/a/span/span[2]"));
-        System.out.println(" 'Grammatical' found");*/
-
-    @Test
-    public void TestCheckTitle() {
-        System.out.println("Check Title");
-        assertEquals("Lingualeo — иностранные языки онлайн", webDriver.getTitle());
-        System.out.println(webDriver.getTitle());
-    }
-
-    @Test
-    public void enterToRegisterToSite3() throws InterruptedException {
-        System.out.println("Finding the element 'Enter' ");
-       /* webDriver.findElement(new By.ByXPath("//*[@id=\"phn-login-btn-2\"]/span"));
-        Thread.sleep(3000);*/
-        webDriver.findElement(new By.ByXPath("//*[@id=\"phn-login-btn-2\"]/span")).click();
+        //System.out.println("Finding the element 'E-mail'");
+        logger.log("Enter E-mail");
+        webDriver.findElement(By.cssSelector(".ll-ModalAuthAlt__credentials")).sendKeys("zahirolek@gmail.com");
         Thread.sleep(3000);
-        System.out.println(" ''Enter'' found and click");
+
+        logger.log("Enter password");
+        webDriver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div[1]/div[3]/div/div[1]/div[2]/div/div[3]/form/input[2]")).sendKeys("Ol24041967");
+
+        Thread.sleep(3000);
+
+        logger.log("Click 'Создать аккаунт");
+        webDriver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div[1]/div[3]/div/div[1]/div[2]/div/div[3]/form/button/span")).click();
+        Thread.sleep(3000);
+
+        logger.log("Login to website as admin");
+        logger.log("Check login is successful");
+
+
+            logger.log("Finding the element '  '");
+            assertTrue(webDriver.findElement(By.cssSelector(".ll-leokit__site-menu__header__title span:last-child")).isDisplayed());
+            logger.log("'LinguaLeo' found");
+        }
     }
-}
+
 
 
 
