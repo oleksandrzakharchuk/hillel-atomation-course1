@@ -49,11 +49,11 @@ public class LoginTests extends TestBase1 {
         Thread.sleep(3000);
 
         System.out.println("Check URL");
-        assertEquals("https://lingualeo.com/ru",webDriver.getCurrentUrl());
+        assertEquals("https://lingualeo.com/ru/dashboard",webDriver.getCurrentUrl());
         System.out.println(webDriver.getCurrentUrl());
 
         System.out.println("Finding the element 'LinguaLeo'.");
-        assertTrue(webDriver.findElement(By.cssSelector(".ll-leokit__site-logo")).isDisplayed());
+        assertTrue(webDriver.findElement(By.cssSelector(".ll-leokit__site-menu__header__title span:last-child")).isDisplayed());
         System.out.println(" 'LinguaLeo' found");
 
        // assertTrue(webDriver.findElement(By.cssSelector(".ll-leokit__side-menu-item__m-selected")).isDisplayed());
