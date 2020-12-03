@@ -10,25 +10,34 @@ public class Registration {
     public Registration(WebDriver webDriver) {
     }
 
+    /*public Registration(WebDriver webDriver) {
+    }*/
+
 
     @Test
 public void enterToRegisterToSite3() {
-    System.out.println("Finding the element 'Enter' ");
-    webDriver.findElement(new By.ByXPath("//*[@id=\"phn-login-btn-2\"]/span"));
-    webDriver.findElement(new By.ByXPath("//*[@id=\"phn-login-btn-2\"]/span")).click();
-    System.out.println(" ''Enter'' found and click");
+        System.out.println("Finding the element 'Enter' ");
+        webDriver.findElement(new By.ByXPath("//*[@id=\"phn-login-btn-2\"]/span"));
+        webDriver.findElement(new By.ByXPath("//*[@id=\"phn-login-btn-2\"]/span")).click();
+        System.out.println(" ''Enter'' found and click");
+    }
+        @Test
+        public void Findingtheelementemail() {
+            System.out.println("Finding the element 'email' ");
+            // webDriver.findElement(new By.ByXPath("//*[@id=\"mail-3\"]")).click().;
+            webDriver.findElement(new By.ByXPath("//*[@id=\"phn-login-form\"]/div[1]/input")).sendKeys("zahirolek@gmail.com");
+            System.out.println(" ''Email'' found and click");
+        }
 
-    System.out.println("Finding the element 'email' ");
-    // webDriver.findElement(new By.ByXPath("//*[@id=\"mail-3\"]")).click().;
-    webDriver.findElement(new By.ByXPath("//*[@id=\"phn-login-form\"]/div[1]/input")).sendKeys("zahirolek@gmail.com");
-    System.out.println(" ''Email'' found and click");
-
-
-    System.out.println("Finding the element 'enterPassword' ");
-    webDriver.findElement(new By.ByXPath("//*[@id=\"phn-login-form\"]/div[2]/input")).click();
-    webDriver.findElement(new By.ByXPath("//*[@id=\"phn-login-form\"]/div[2]/input")).sendKeys(".RvqDgCbZbxcy2S");
-    System.out.println(" ''Email'' found and click");
-
+    @Test
+    public void FindingtheelemententerPassword() {
+        System.out.println("Finding the element 'enterPassword' ");
+        webDriver.findElement(new By.ByXPath("//*[@id=\"phn-login-form\"]/div[2]/input")).click();
+        webDriver.findElement(new By.ByXPath("//*[@id=\"phn-login-form\"]/div[2]/input")).sendKeys(".RvqDgCbZbxcy2S");
+        System.out.println(" ''Email'' found and click");
+    }
+    @Test
+    public void Findingtheelemententer() {
     System.out.println("Finding the element 'enter' ");
     webDriver.findElement(new By.ByXPath("//*[@id=\"phn-login-form\"]/div[3]/input")).click();
     webDriver.findElement(new By.ByXPath("//*[@id=\"phn-login-form\"]/div[3]/input")).sendKeys(".RvqDgCbZbxcy2S");

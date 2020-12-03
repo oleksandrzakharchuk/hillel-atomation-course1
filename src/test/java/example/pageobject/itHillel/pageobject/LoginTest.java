@@ -16,7 +16,7 @@ public class LoginTest {
     public void setUp() {
         //определение пути до драйвера и его настройка
         System.out.println("Start browser");
-        System.setProperty("webdriver.chrome.driver", ConfProperties.getProperty("chromedriver"));
+        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
         //создание экземпляра драйвера
         WebDriver driver = new ChromeDriver();
         //окно разворачивается на полный экран
