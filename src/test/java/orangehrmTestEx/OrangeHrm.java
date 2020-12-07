@@ -1,37 +1,37 @@
 package orangehrmTestEx;
 
+import jdk.internal.access.JavaIOFileDescriptorAccess;
 import org.example.logger.StdTestLogger;
 import org.example.logger.TestLogger;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-//import sun.jvm.hotspot.utilities.soql.JSJavaScriptEngine;
-
 public class OrangeHrm {
 
     TestLogger logger = new StdTestLogger();
+    private JavaIOFileDescriptorAccess webDriver;
 
-      @Test
+    @Test
     public void testSeccesLogin() throws InterruptedException {
         logger.log("Open browser");
+         //WebDriver webDriver = new FirefoxDriver();
+       // System.setProperty("webdriver.gecko.driver", "C:\\geckodriver\\geckodriver.exe");
 
-        System.setProperty("webdriver.gecko.driver", "C:\\geckodriver\\geckodriver.exe");
-        WebDriver webDriver = new FirefoxDriver();
 
-        /*System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
         WebDriver webDriver=new ChromeDriver();
-*/
+
         logger.log("Open website");
         webDriver.get("https://s2.demo.opensourcecms.com/orangehrm/");
-
+        Thread.sleep(5000);
 
         logger.log("Check URL");
         assertEquals("https://s2.demo.opensourcecms.com/orangehrm/symfony/web/index.php/auth/login", webDriver.getCurrentUrl());
@@ -45,8 +45,9 @@ public class OrangeHrm {
        // webDriver.findElement(By.linkText("LOGIN Panel")).click();
        //logger.log("'LOGIN Panel' found")
           // NoSuchElementException: Unable to locate element: LOGIN Panel
+          Thread.sleep(2000);
 
-        logger.log("Check LOGIN Panel");
+          logger.log("Check LOGIN Panel");
         WebElement frmLogin=webDriver.findElement(By.id("frmLogin"));
         List<WebElement> loginLinks=frmLogin.findElements(By.tagName("LOGIN Panel"));
        for(WebElement link:loginLinks){
@@ -58,17 +59,33 @@ public class OrangeHrm {
         logger.log("'LOGIN Panel' found");
 
         logger.log("Click on 'Username' link ");
-        webDriver.findElement(By.id("txtUsername")).click();
+        WebElement usernameInput=webDriver.findElement(By.id("txtUsername"));
+        usernameInput.click();
+        usernameInput.clear();
+        usernameInput.sendKeys("opensourcecms");
+        logger.log("Entered Username");
+
+        /*webDriver.findElement(By.id("txtUsername")).click();
         logger.log("Enter Username");
         webDriver.findElement(By.id("txtUsername")).sendKeys("opensourcecms");
-
+*/
         logger.log("Click on 'Password' link ");
-        webDriver.findElement(By.id("txtPassword")).click();
+        WebElement passwordInput=webDriver.findElement(By.id("txtPassword"));
+        passwordInput.click();
+        passwordInput.clear();
+
+        for(char letter:"opensourcecms".toCharArray()){
+            passwordInput.sendKeys("" +letter);
+            Thread.sleep(300);
+        }
+
+       /* webDriver.findElement(By.id("txtPassword")).click();
         logger.log("Enter Password ");
-        webDriver.findElement(By.id("txtPassword")).sendKeys("opensourcecms");
+        webDriver.findElement(By.id("txtPassword")).sendKeys("opensourcecms");*/
 
         logger.log("Click 'Login' button");
-        webDriver.findElement(By.id("btnLogin")).click();
+          webDriver.findElement(By.id("btnLogin")).click();
+          Thread.sleep(3000);
 
         logger.log("Check Login is successful ");
 
