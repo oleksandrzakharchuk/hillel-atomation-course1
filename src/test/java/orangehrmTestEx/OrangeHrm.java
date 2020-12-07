@@ -41,9 +41,10 @@ public class OrangeHrm {
         assertEquals("", webDriver.getTitle());
         System.out.println(webDriver.getTitle());
 
-        /* logger.log("Check LOGIN Panel");
-        webDriver.findElement(By.linkText("LOGIN Panel"));
-       // logger.log("'LOGIN Panel' found"); not founded */
+        //logger.log("Check LOGIN Panel");
+       // webDriver.findElement(By.linkText("LOGIN Panel")).click();
+       //logger.log("'LOGIN Panel' found")
+          // NoSuchElementException: Unable to locate element: LOGIN Panel
 
         logger.log("Check LOGIN Panel");
         WebElement frmLogin=webDriver.findElement(By.id("frmLogin"));
