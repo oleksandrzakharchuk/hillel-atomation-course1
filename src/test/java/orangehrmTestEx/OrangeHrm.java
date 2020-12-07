@@ -110,10 +110,11 @@ public class OrangeHrm {
         logger.log("'Top-menu' found");
 
        // Thread.sleep(300);
+        TimeUtils.waitFor(2);
 
         webDriver.quit();
 
-        TimeUtils.waitFor(2);
+
 
     }
 }
