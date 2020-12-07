@@ -47,8 +47,13 @@ public class OrangeHrm {
 
         logger.log("Check LOGIN Panel");
         WebElement frmLogin=webDriver.findElement(By.id("frmLogin"));
-        frmLogin.findElements(By.tagName("LOGIN Panel"));
         List<WebElement> loginLinks=frmLogin.findElements(By.tagName("LOGIN Panel"));
+       for(WebElement link:loginLinks){
+           if(link.getText().equals("LOGIN Panel")){
+               link.click();
+               break;
+           }
+       }
         logger.log("'LOGIN Panel' found");
 
         logger.log("Click on 'Username' link ");
