@@ -1,4 +1,4 @@
-package org.example.wdm.factory;
+//package org.example.wdm.factory;
 
 /*
 import com.wixpress.automation.webdriver.config.WebDriverConfig;

@@ -1,9 +1,8 @@
 package orangehrmTestEx;
-
-import jdk.internal.access.JavaIOFileDescriptorAccess;
 import org.example.logger.StdTestLogger;
 import org.example.logger.TestLogger;
-import org.example.utils.TimeUtils;
+import org.example.utils.ScreenshotUtils;
+import org.example.wdm.factories.WebDriverFactory;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -18,10 +17,10 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class OrangeHrm {
+public class OrangeHrm implements WebDriverFactory {
 
     TestLogger logger = new StdTestLogger();
-    private JavaIOFileDescriptorAccess webDriver;
+
 
     @Test
     public void testSeccesLogin() throws InterruptedException {
@@ -39,8 +38,10 @@ public class OrangeHrm {
 
         logger.log("Open website");
         webDriver.get("https://s2.demo.opensourcecms.com/orangehrm/");
-        // Thread.sleep(5000);
+         Thread.sleep(5000);
 
+       // JavascriptExecutor js=(JavascriptExecutor) webDriver;
+        //System.out.println(js.executeScript(String.valueOf(JavaScripts.META_BLOCK_TEXT.getJs())));
 
         logger.log("Check URL");
         assertEquals("https://s2.demo.opensourcecms.com/orangehrm/symfony/web/index.php/auth/login", webDriver.getCurrentUrl());
@@ -59,6 +60,11 @@ public class OrangeHrm {
         logger.log("Check LOGIN Panel");
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("frmLogin")));
         WebElement frmLogin=webDriver.findElement(By.id("frmLogin"));
+
+
+       // js.executeScript(JavaScripts.SCROLL_TO_ELEMENT.getJs());
+        //TimeUtils.waitFor(5);
+
         List<WebElement> loginLinks=frmLogin.findElements(By.tagName("LOGIN Panel"));
        for(WebElement link:loginLinks){
            if(link.getText().equals("LOGIN Panel")){
@@ -110,12 +116,20 @@ public class OrangeHrm {
         logger.log("'Top-menu' found");
 
        // Thread.sleep(300);
-        TimeUtils.waitFor(2);
-
+        //TimeUtils.waitFor(2);
+        ScreenshotUtils.makeScreenshot(webDriver,"image.png");
+        //googl-selenium make screenshot java
         webDriver.quit();
+        //googl- selenium upload file java
+        //googl-selenium download file java1
 
 
 
+    }
+
+    @Override
+    public String create() {
+        return null;
     }
 }
 

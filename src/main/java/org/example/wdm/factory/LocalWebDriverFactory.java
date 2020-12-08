@@ -1,13 +1,9 @@
+/*
 package org.example.wdm.factory;
 
-/*
-import com.wixpress.automation.webdriver.binaries.WebDriverBinaryManager;
-import com.wixpress.automation.webdriver.capabilities.BrowserCapabilities;
-import com.wixpress.automation.webdriver.capabilities.PlatformCapabilities;
-import com.wixpress.automation.webdriver.config.WebDriverConfig;
-import com.wixpress.automation.webdriver.enums.WebDriverType;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.ios.IOSDriver;
+
+import org.example.wdm.enums.WebDriverType;
+
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -23,7 +19,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class LocalWebDriverFactory implements WebDriverFactory {
+public class LocalWebDriverFactory  {
 
     @Override
     public WebDriver create(WebDriverType webDriverType) {
@@ -100,4 +96,5 @@ public class LocalWebDriverFactory implements WebDriverFactory {
         return edgeDriverService;
     }
 }
+
 */
