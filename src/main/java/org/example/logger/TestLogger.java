@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public abstract class TestLogger {
+    protected int step=1;
 
     public abstract void log(String msg);
 

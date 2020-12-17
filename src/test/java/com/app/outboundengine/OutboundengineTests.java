@@ -2,13 +2,21 @@ package com.app.outboundengine;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class OutboundengineTests {
+    WebDriver webDriver;
 
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
-        WebDriver webDriver = new ChromeDriver();
+
+
+        /*System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver\\chromedriver.exe");
+        WebDriver webDriver = new ChromeDriver();*/
+
+
+       System.setProperty("webdriver.gecko.driver", "C:\\geckodriver.exe");
+        WebDriver webDriver = new FirefoxDriver();
+
 
         webDriver.get("https://app.outboundengine.com/");
 
@@ -32,7 +40,7 @@ public class OutboundengineTests {
        // row.findElement(By.cssSelector(".x-grid-row-checked")).click();
 
         //webDriver.findElement(By.cssSelector("a[id*='flyui-button'])")).click();
-
+        webDriver.quit();
         }
     }
 

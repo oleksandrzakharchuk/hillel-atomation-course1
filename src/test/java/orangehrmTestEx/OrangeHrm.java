@@ -1,14 +1,16 @@
 package orangehrmTestEx;
+
 import org.example.logger.StdTestLogger;
 import org.example.logger.TestLogger;
 import org.example.utils.ScreenshotUtils;
+import org.example.utils.TimeUtils;
 import org.example.wdm.factories.WebDriverFactory;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -25,12 +27,14 @@ public class OrangeHrm implements WebDriverFactory {
     @Test
     public void testSeccesLogin() throws InterruptedException {
         logger.log("Open browser");
-         //WebDriver webDriver = new FirefoxDriver();
-       // System.setProperty("webdriver.gecko.driver", "C:\\geckodriver\\geckodriver.exe");
+
+        /*System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver\\chromedriver.exe");
+        WebDriver webDriver = new ChromeDriver();*/
 
 
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
-        WebDriver webDriver=new ChromeDriver();
+
+       System.setProperty("webdriver.gecko.driver", "C:\\geckodriver.exe");
+        WebDriver webDriver = new FirefoxDriver();
 
         webDriver.manage().window().setSize(new Dimension(1920, 1240));
 
@@ -62,8 +66,8 @@ public class OrangeHrm implements WebDriverFactory {
         WebElement frmLogin=webDriver.findElement(By.id("frmLogin"));
 
 
-       // js.executeScript(JavaScripts.SCROLL_TO_ELEMENT.getJs());
-        //TimeUtils.waitFor(5);
+       // js.executeScript(JavaScripts.SCROLL_TO_ELEMENT.getJs().frmLogin);
+        TimeUtils.waitFor(5);
 
         List<WebElement> loginLinks=frmLogin.findElements(By.tagName("LOGIN Panel"));
        for(WebElement link:loginLinks){
@@ -90,7 +94,6 @@ public class OrangeHrm implements WebDriverFactory {
         WebElement passwordInput=webDriver.findElement(By.id("txtPassword"));
         passwordInput.click();
         passwordInput.clear();
-
         for(char letter:"opensourcecms".toCharArray()){
             passwordInput.sendKeys("" +letter);
             Thread.sleep(300);
