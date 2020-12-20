@@ -1,3 +1,4 @@
+
 package org.example.wdm;
 
 
@@ -7,11 +8,11 @@ public interface WebDriverManager {
 
 
 
-    String getBrowser();
+    WebDriver getBrowser();
 
     void destroyBrowser(WebDriver browser);
 
-    void destroyBrowser(String browser);
+
 
     WebDriver createBrowser();
 
@@ -20,6 +21,7 @@ public interface WebDriverManager {
     WebDriver getAvailableWebDriver();
 
 }
+
 
 
     //public String createBrowser() {

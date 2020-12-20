@@ -16,6 +16,11 @@ public class MainPageFact {
     @FindBy(id = "frmLogin")
     WebElement loginPanel;
 
+/*public TopLinksBar topLinksBar(){
+    return new TopLinksBar(webDriver.findElement(By.id("top-menu"));
+
+}*/
+
 
     public MainPageFact(WebDriver webDriver) {
         this.webDriver = webDriver;

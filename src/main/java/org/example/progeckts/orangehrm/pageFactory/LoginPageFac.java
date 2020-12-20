@@ -12,6 +12,7 @@ public class LoginPageFac {
 
     private final WebDriver webDriver;
     private final WebDriverWait wait;
+
     private final String errorMsgId="spanMessage";
 
     @FindBy(id = "txtUsername")
@@ -25,6 +26,9 @@ public class LoginPageFac {
 
     @FindBy(id = errorMsgId)
     private WebElement errorMessage;
+
+    @FindBy(id = "drop")
+    private WebElement topLinksBar;
 
     public LoginPageFac(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -54,6 +58,9 @@ public class LoginPageFac {
 wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id(errorMsgId)));
     return errorMessage.getText();
 
+    }
+    public void topLinksBar(){
+        topLinksBar.click();
     }
 }
 

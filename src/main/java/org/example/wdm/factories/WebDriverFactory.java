@@ -1,5 +1,7 @@
 package org.example.wdm.factories;
 
-public interface WebDriverFactory {
+import org.openqa.selenium.WebDriver;
+
+public interface WebDriverFactory extends WebDriver {
     String create();
 }

@@ -1,8 +1,8 @@
 package org.example.base;
 
 import org.example.config.ConfigurationManager;
-import org.example.data.UsersDataMapper;
 import org.example.data.FileUserDataMapper;
+import org.example.data.UsersDataMapper;
 import org.example.logger.FileTestLogger;
 import org.example.logger.StdTestLogger;
 import org.example.logger.TestLogger;
@@ -12,40 +12,47 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.openqa.selenium.WebDriver;
 
 @RunWith(JUnit4.class)
 public abstract class TestBase1 {
 
     protected final TestLogger logger = getLogger();
     private WebDriverManager wdm;
-    protected String browser;
+    protected WebDriver webDriver;
 
-    protected UsersDataMapper usersMapper = new FileUserDataMapper("users.txt");
+    protected SeleniumUtils seleniumUtils;
+
+    protected UsersDataMapper usersMapper;
 
     @Before
     public void startUp() {
         logger.log("Launch browser");
         wdm = new DefaultWebDriverManager();
-        browser = wdm.getBrowser();
+        io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
+        webDriver = wdm.getBrowser();
 
-       /* logger.log("Open website");
-        System.out.println("-->" + browser + " opening "); //+TestUrl.getUrl());
-//...*/
+        seleniumUtils=new SeleniumUtils(webDriver);
+
+        logger.log("Open website");
+
+
+        usersMapper = new FileUserDataMapper("users.txt");
         beforeTest();
     }
     @After
     public void cleanUp() {
         afterTest();
         //...
-        wdm.destroyBrowser(browser);
+        wdm.destroyBrowser(webDriver);
     }
 
     protected void beforeTest() {
-        System.out.println("------>DEFOULT BEFORE TEST");
+
     }
 
     protected void afterTest() {
-        System.out.println("-----> DEFOLT AFTER TEST");
+
     }
 
     private TestLogger getLogger() {
