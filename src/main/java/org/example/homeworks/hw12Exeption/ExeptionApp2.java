@@ -2,11 +2,12 @@ package org.example.homeworks.hw12Exeption;
 
 import org.example.wdm.DefaultWebDriverManager;
 import org.example.wdm.WebDriverManager;
+import org.openqa.selenium.WebDriver;
 
 public class ExeptionApp2 {
     public static void main(String[] args) {
 
-        String browser=null;
+        WebDriver browser=null;
         WebDriverManager wdm= new DefaultWebDriverManager();
 
         try{
